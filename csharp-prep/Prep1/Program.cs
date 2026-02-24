@@ -2,8 +2,16 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep1 World!");
+        //int x = 10; //x needs to be assigned at first
+        string firstName;
+        string lastName;
+
+        Console.Write("What is your first name?: "); //needs semi colon
+        firstName = Console.ReadLine();
+        Console.Write("What is your last name?: ");
+        lastName = Console.ReadLine();
+        Console.WriteLine($"{lastName}. {firstName} {lastName}.");
     }
 }
