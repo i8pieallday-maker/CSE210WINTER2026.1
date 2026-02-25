@@ -8,7 +8,7 @@ class Program
         string firstName;
         string lastName;
 
-        Console.Write("What is your first name?: "); //needs semi colon
+        Console.Write("dsafs dWhat is your first name?: "); //needs semi colon
         firstName = Console.ReadLine();
         Console.Write("What is your last name?: ");
         lastName = Console.ReadLine();
