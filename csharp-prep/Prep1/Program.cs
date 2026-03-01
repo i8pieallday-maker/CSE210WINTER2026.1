@@ -6,30 +6,65 @@ class Program
 {
     public static void Main(string[] args)
     {
-        int response = -1;
-        Random randomGenerator = new Random();
-        int number = randomGenerator.Next(1,101);
 
-        while (response != number)
+         List<int> numbers = new List<int>();
+        int input = -1;
+        
+        int total = 0;
+        double average = 0;
+        int bigNumber = 0;
+        Console.WriteLine("Enter a list of numbers, 0 is illegal though\n");
+        while (input != 0)
         {
-            
-            Console.Write($"What's the number?");
-            response = int.Parse(Console.ReadLine());
-            if (response > number)
+            Console.Write($"Enter number: ");
+            string response = Console.ReadLine();
+
+            if (int.TryParse(response, out input))
             {
-                Console.WriteLine("Like icarus, you have flown too high");
-            }
-            else if (response < number)
-            {
-                Console.WriteLine("Higher");
+                numbers.Add(input);
             }
             else
             {
-                Console.WriteLine("yay good job!!!!");
+                Console.WriteLine("no try an actual number");
             }
+
+            foreach (int n in numbers)
+            {
+                total += n;
+            }
+            average = (double)total / numbers.Count;
+            bigNumber = numbers.Max();
         }
+
+        Console.WriteLine($"Sum = {total}");
+        Console.WriteLine($"average = {average}");
+        Console.WriteLine("largest number = " + bigNumber);
+
+
     }
 }
+
+        // int response = -1;
+        // Random randomGenerator = new Random();
+        // int number = randomGenerator.Next(1,101);
+
+        // while (response != number)
+        // {
+            
+        //     Console.Write($"What's the number?");
+        //     response = int.Parse(Console.ReadLine());
+        //     if (response > number)
+        //     {
+        //         Console.WriteLine("Like icarus, you have flown too high");
+        //     }
+        //     else if (response < number)
+        //     {
+        //         Console.WriteLine("Higher");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("yay good job!!!!");
+        //     }
 
 
 //         /*Console.WriteLine("helluuu");
