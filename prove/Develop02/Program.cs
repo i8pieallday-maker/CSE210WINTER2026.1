@@ -169,7 +169,7 @@ class Program
                 Console.WriteLine( "(" + l + ")   " + Path.GetFileName(file));
 
                 l +=1;
-            }            Console.WriteLine("Which one would you like to read/write to?");
+            }            Console.WriteLine("Which one would you like to read/add to?");
 
 
             check = journals[int.Parse(Console.ReadLine())];
