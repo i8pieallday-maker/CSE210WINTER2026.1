@@ -9,12 +9,18 @@ class Circle
 
     public void SetRadius(double radius)
     {
-        _radius = radius;
+        if (radius < 0)
+        {
+            Console.WriteLine("invalid radius");
+            _radius = 0;
+        }
+        else
+            _radius = radius;
     }
 
     public double GetArea()
     {
-        return Math.PI * _radius * _radius;
+        return Math.PI * +_radius *_radius;
     }
 
     public double GetDiameter()
