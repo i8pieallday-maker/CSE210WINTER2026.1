@@ -27,10 +27,11 @@ class Scripture
         }
         Console.WriteLine();
     }
-    public void HideWords()
+    public bool HideWords()
     {
         int HiddenCount = 0;
         int WordsToHide = 3;
+        bool ReturnStatus = false;
         foreach (Word w in _words)
         {
             if (w.IsHidden())
@@ -42,6 +43,7 @@ class Scripture
         if (_words.Count - HiddenCount < 3)
         {
             WordsToHide = _words.Count - HiddenCount;
+            ReturnStatus = true;
         } 
         for (int i = 0; i < WordsToHide;)
         {
@@ -52,5 +54,6 @@ class Scripture
                 i++;
             }
         }
+        return ReturnStatus;
     }
 }
