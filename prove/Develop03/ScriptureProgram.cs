@@ -19,9 +19,25 @@ class Program
         Reference scripture2 = new Reference("Alma", 5, 1, 0);
         Console.WriteLine(scripture2.GetReference());
 
-        Scripture scripture3 = new Scripture("Alma", 5, 1, 2, "this is a test");
-        scripture3.DisplayScripture();
+        Scripture scripture3 = new Scripture("Alma", 5, 1, 2, "i want to be the very best that no one ever was pokemon gotta catch em all");
+        // scripture3.DisplayScripture();
+        // scripture3.HideWords();
+        // scripture3.DisplayScripture();
+        
+        bool done = false;
+        while (!done)
+        {
+            Console.Clear();
+            Console.WriteLine("enter q to quit or hit return to hide words");
+            scripture3.DisplayScripture();
+            scripture3.HideWords();
+            string response = Console.ReadLine();
+            if (response == "q")
+            {
+                done = true;    
+            }
 
+        }
     }
 }
 
