@@ -13,6 +13,15 @@ class Program
         Console.WriteLine(myWord2.GetWordString());
         myWord2.HideWord();
         Console.WriteLine(myWord2.GetWordString());
+
+        Reference scripture = new Reference("Alma", 5, 1, 2);
+        Console.WriteLine(scripture.GetReference());
+        Reference scripture2 = new Reference("Alma", 5, 1, 0);
+        Console.WriteLine(scripture2.GetReference());
+
+        Scripture scripture3 = new Scripture("Alma", 5, 1, 2, "this is a test");
+        scripture3.DisplayScripture();
+
     }
 }
 
