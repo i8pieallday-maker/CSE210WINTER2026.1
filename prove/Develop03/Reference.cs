@@ -15,22 +15,22 @@ class Reference
         _startVerse = Startverse;
         _endVerse = Endverse;
     }
-    public string GetBook()
-    {
-        return _book;
-    }
-    public int GetChapter()
-    {
-        return _chapter;
-    }
-    public int GetStartVerse()
-    {
-        return _startVerse;
-    }
-    public int GetEndVerse()
-    {
-        return _endVerse;
-    }
+    // public string GetBook()
+    // {
+    //     return _book;
+    // }
+    // public int GetChapter()
+    // {
+    //     return _chapter;
+    // }
+    // public int GetStartVerse()
+    // {
+    //     return _startVerse;
+    // }
+    // public int GetEndVerse()
+    // {
+    //     return _endVerse;
+    // }
     public string GetReference()
     {
         if(_endVerse != 0)

@@ -2,37 +2,28 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    public static void Display(Scripture scripture)
     {
-        // Word myWord = new Word("Bob");
-        // Console.WriteLine(myWord.GetWordString());
-        // myWord.HideWord();
-        // Console.WriteLine(myWord.GetWordString());
-
-        // Word myWord2 = new Word("Moroni");
-        // Console.WriteLine(myWord2.GetWordString());
-        // myWord2.HideWord();
-        // Console.WriteLine(myWord2.GetWordString());
-
-        // Reference scripture = new Reference("Alma", 5, 1, 2);
-        // Console.WriteLine(scripture.GetReference());
-        // Reference scripture2 = new Reference("Alma", 5, 1, 0);
-        // Console.WriteLine(scripture2.GetReference());
-
-        Scripture scripture3 = new Scripture("Alma", 5, 1, 2, "i want to be the very best that no one ever was pokemon gotta catch em all");
-        // scripture3.DisplayScripture();
-        // scripture3.HideWords();
-        // scripture3.DisplayScripture();
-        
         Console.Clear();
         Console.WriteLine("enter q to quit or hit return to hide words");
-        scripture3.DisplayScripture();
+        scripture.DisplayScripture();
+    }
+    static void Main(string[] args)
+    {
+
+        List<Scripture> scriptures = new List<Scripture>();
+        scriptures.Add(new Scripture("Alma", 5, 1, 2, "and my father dwelt in a tent"));
+        scriptures.Add(new Scripture("Helaman", 5, 12, 0, "And now my sons, I say unto you, Fear not. "))
+        scriptures.Add(new Scripture("Alma", 7, 11, 12, "Took upon Him death."));
+        Random rand = new Random();
+        Scripture scripture = scriptures[rand.Next(scriptures.Count)];
+        Display(scripture);
+
         bool done = false;
         while (!done)
         {
-            if (scripture3.HideWords())
+            if (scripture.HideWords())
             {
-                
                 done = true;
             }
             else
@@ -43,9 +34,7 @@ class Program
                     done = true;    
                 }  
             }
-            Console.Clear();
-            Console.WriteLine("enter q to quit or hit return to hide words");
-            scripture3.DisplayScripture();
+            Display(scripture);
         }
     }
 }

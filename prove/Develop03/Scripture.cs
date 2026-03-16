@@ -40,7 +40,7 @@ class Scripture
             }
         }
         Random myRandom = new Random();
-        if (_words.Count - HiddenCount < 3)
+        if (_words.Count - HiddenCount <= 3)
         {
             WordsToHide = _words.Count - HiddenCount;
             ReturnStatus = true;
