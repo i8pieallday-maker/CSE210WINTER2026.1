@@ -18,4 +18,28 @@ class Person
     {
         return $"Name: {_firstName} {_lastName}, age: {_age}, weight: {_weight}";
     }
+
+    public void SetWeight(int weight)
+    {
+        if(weight < 4 || weight > 500)
+        {
+            Console.WriteLine("Invalid weight");
+        }
+        else
+        {
+            _weight = weight;
+        }
+    }
+
+    public void SetAge(int age)
+    {
+        if (age < 0 || age > 125)
+        {
+            Console.WriteLine("no");
+        }
+        else
+        {
+            _age = age;
+        }
+    }
 }

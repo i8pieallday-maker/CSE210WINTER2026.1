@@ -7,4 +7,8 @@ class Doctor : Person
     {
         _tools = tools;
     }
+    public string GetDoctorInformation()
+    {
+        return $"Tools: {GetPersonInformation}";
+    }
 }
