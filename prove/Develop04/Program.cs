@@ -8,5 +8,7 @@ class Program1
 
         baseActivity.Greeting();
         baseActivity.Description();
+
+        baseActivity.DisplaySpinner("Hey howdy", 5);
     }
 }
