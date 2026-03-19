@@ -1,9 +1,12 @@
 using System;
 
-class Program
+class Program1
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        BaseActivity baseActivity = new BaseActivity("Breathing", "This activity will help you breathe more better.");
+
+        baseActivity.Greeting();
+        baseActivity.Description();
     }
 }
