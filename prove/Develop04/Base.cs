@@ -33,7 +33,7 @@ class BaseActivity
         int index = 0;
 
         Console.CursorVisible = false;
-        Console.Clear();      
+        //Console.Clear();      
 
         Console.Write($"{message} ");
 
