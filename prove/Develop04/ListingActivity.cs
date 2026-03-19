@@ -31,9 +31,15 @@ class ListingActivity : BaseActivity
         Greeting();
         string prompt = GetRandomPrompt();
         Console.WriteLine(prompt);
-        DisplaySpinner("10 seconds", 10);
+
+        Console.WriteLine("\nStart listing");
+        StartTimer();
+        while (!HasTimerExpired())
+        {
+            Console.Write("> ");
+            Console.ReadLine();
+        }
 
     }
 
 }
-

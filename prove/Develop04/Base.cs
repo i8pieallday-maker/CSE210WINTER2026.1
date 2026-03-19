@@ -17,6 +17,8 @@ class BaseActivity
     public void Greeting()
     {
         Console.WriteLine($"Welcome to the {_name} activity.");
+        Console.Write("How long do you want your session to go for?");
+        _duration = int.Parse(Console.ReadLine());
     }
 
     public void Description()
@@ -24,6 +26,16 @@ class BaseActivity
         Console.WriteLine(_description);
     }
 
+    public void StartTimer()
+    {
+        _endTime = DateTime.Now.AddSeconds(_duration);
+    }
+
+    public bool HasTimerExpired()
+    {
+        return DateTime.Now > _endTime;
+    }
+    
     public void DisplaySpinner(string message, int seconds)
     {
         DateTime currentTime = DateTime.Now;
