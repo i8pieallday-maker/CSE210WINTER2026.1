@@ -1,10 +1,10 @@
 
 class BaseActivity
 {
-    private int _duration;
-    private string _name;
-    private string _description;
-    private DateTime _endTime;
+    protected int _duration;
+    protected string _name;
+    protected string _description;
+    protected DateTime _endTime;
 
     public BaseActivity(string name, string description)
     {
@@ -19,6 +19,7 @@ class BaseActivity
         Console.WriteLine($"Welcome to the {_name} activity.");
         Console.Write("How long do you want your session to go for?");
         _duration = int.Parse(Console.ReadLine());
+
     }
 
     public void Description()
