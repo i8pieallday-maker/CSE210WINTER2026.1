@@ -2,7 +2,7 @@
 class ReflectionActivity : BaseActivity
 {
 
-    private string[] prompts =
+    private List<string> prompts = new List<string>()
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -13,7 +13,7 @@ class ReflectionActivity : BaseActivity
         "Frogs."
     };
 
-    private string[] questions =
+    private List<string> questions = new List<string>()
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -26,12 +26,6 @@ class ReflectionActivity : BaseActivity
         "How can you keep this experience in mind in the future?"
     };
 
-    protected string GetRandomPrompt()
-    {
-        Random rand = new Random();
-        int index = rand.Next(prompts.Length);
-        return prompts[index];
-    }
 
     public ReflectionActivity(string name, string description) : base(name, description)
     {
@@ -47,12 +41,12 @@ class ReflectionActivity : BaseActivity
         //ShowCountDown(5, 300);
         //get ready -> run countdown
         int i = 0;
-        Console.WriteLine(GetRandomPrompt());
-
+        Console.WriteLine(GetRandomPrompt(prompts));
+        Thread.Sleep(1);
         while (i < 7)
         {
             Console.WriteLine(questions[i]);
-            DisplaySpinner(1);
+            DisplaySpinner(2);
             i += 1;
         }
             // int timeRemaining = (int)(endTime - DateTime.Now).TotalSeconds;

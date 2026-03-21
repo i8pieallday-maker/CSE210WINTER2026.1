@@ -17,29 +17,12 @@ class ListingActivity : BaseActivity
     {
     }
 
-    private string GetRandomPrompt()
-    {
-        Random rand = new Random();
-
-        if (_prompts.Count == 0)
-        {
-            return "No more prompts :(";
-        }
-        
-        int index = rand.Next(_prompts.Count);
-        string prompt = _prompts[index];
-
-        _prompts.RemoveAt(index); //doesn't repeat the same prompts :)
-
-        return prompt;
-    }
-
     public void RunActivity()
     {
         Console.WriteLine();
         Greeting();
         Duration();
-        string prompt = GetRandomPrompt();
+        string prompt = GetRandomPrompt(_prompts);
         Console.WriteLine();
         Console.WriteLine(prompt);
         ShowCountDown(5, 1000);

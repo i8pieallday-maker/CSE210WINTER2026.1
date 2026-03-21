@@ -36,6 +36,23 @@ class BaseActivity
         _endTime = DateTime.Now.AddSeconds(_duration);
     }
 
+    protected string GetRandomPrompt(List<string> prompts)
+    {
+        Random rand = new Random();
+
+        if (prompts.Count == 0)
+        {
+            return "No more prompts :(";
+        }
+        
+        int index = rand.Next(prompts.Count);
+        string prompt = prompts[index];
+
+        prompts.RemoveAt(index); //doesn't repeat the same prompts :)
+
+        return prompt;
+    }
+
     public bool HasTimerExpired()
     {
         return DateTime.Now > _endTime;
