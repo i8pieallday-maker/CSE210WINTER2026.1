@@ -17,9 +17,13 @@ class BaseActivity
     public void Greeting()
     {
         Console.WriteLine($"Welcome to the {_name} activity.");
-        Console.Write("How long do you want your session to go for?");
-        _duration = int.Parse(Console.ReadLine());
+        Console.WriteLine(_description);
+    }
 
+    public void Duration()
+    {
+        Console.Write("How long do you want your session to go for? ");
+        _duration = int.Parse(Console.ReadLine());
     }
 
     public void Description()
@@ -36,29 +40,55 @@ class BaseActivity
     {
         return DateTime.Now > _endTime;
     }
-    
-    public void DisplaySpinner(string message, int seconds)
+
+    protected void ShowCountDown(int seconds, int speed)
     {
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(seconds);
-        int sleepTime = 100;
-        string animationString = "-\\|/-";
-        int index = 0;
-
-        Console.CursorVisible = false;
-        //Console.Clear();      
-
-        Console.Write($"{message} ");
-
-        while(DateTime.Now < endTime)
+        for (int i = seconds; i > 0; i--)
         {
-            Console.Write(animationString[index++ % animationString.Length]);
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
+            Console.Write(i+ " ");
+            Thread.Sleep(speed);
         }
-
-        Console.CursorVisible = true;
+        Console.WriteLine();
     }
+
+    protected void ReflectTimer(int seconds)
+    {
+         for (int i = seconds; i > 0; i--)
+        {
+            Thread.Sleep(1000);
+        }
+    }
+    
+    public void DisplaySpinner(int seconds)
+    {
+        // DateTime currentTime = DateTime.Now;
+        // DateTime endTime = currentTime.AddSeconds(seconds);
+        int width = 20;
+        string leftAnimationString = "<'(((><";
+        string rightAnimationString = "><)))'>";
+        int sleepTime = 80;
+        
+        Console.CursorVisible = false;   
+        for (int s = 0; s < seconds; s++)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                string frame = new string(' ', i) + rightAnimationString;
+                Console.Write("\r" + frame.PadRight(40));              
+                Thread.Sleep(sleepTime);
+            }
+            for (int i = width; i > 0; i--)
+            {
+                string frame = "\r" + new string(' ', i) + leftAnimationString;
+                Console.Write("\r" + frame.PadRight(40));              
+                Thread.Sleep(sleepTime);
+            }
+        }
+        Console.CursorVisible = true;
+        Console.Write("\r" + new string(' ', width + 10) + "\r"); //clear line    }
+    
+    }
+
 }
 
 // static void ShowCountdown(int seconds)

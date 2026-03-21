@@ -10,9 +10,20 @@ class BreathingActivity : BaseActivity
     {
         Console.WriteLine();
         Greeting();
-        //get number of seconds for breathing
-        //run countdown
-        //while seconds exist etc. 
-        //display ending
+        Duration();
+        //get number of seconds
+        Console.WriteLine($"Ready in: ");
+        ShowCountDown(5, 700);
+        //get ready -> run countdown
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Console.WriteLine("Breathe in");
+            ShowCountDown(5, 1000);
+
+            Console.WriteLine("Breathe Out");
+            ShowCountDown(6, 1000);
+        }
+        Console.WriteLine("\nGood job!\n");
     } 
 }

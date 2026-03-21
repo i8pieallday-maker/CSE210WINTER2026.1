@@ -15,7 +15,6 @@ class ListingActivity : BaseActivity
 
     public ListingActivity(string name, string description) : base(name, description)
     {
-        
     }
 
     private string GetRandomPrompt()
@@ -29,17 +28,24 @@ class ListingActivity : BaseActivity
     {
         Console.WriteLine();
         Greeting();
+        Duration();
         string prompt = GetRandomPrompt();
+        Console.WriteLine();
         Console.WriteLine(prompt);
 
-        Console.WriteLine("\nStart listing");
+        Console.WriteLine("Start listing");
         StartTimer();
+        
+        List<string> list = new List<string>();
+
         while (!HasTimerExpired())
         {
             Console.Write("> ");
-            Console.ReadLine();
+            list.Add(Console.ReadLine());
         }
-
+        
+        Console.WriteLine("\nGood job!");
+        Console.WriteLine("You listed " + list.Count + " items.");
     }
 
 }
