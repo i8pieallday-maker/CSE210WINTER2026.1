@@ -20,8 +20,18 @@ class ListingActivity : BaseActivity
     private string GetRandomPrompt()
     {
         Random rand = new Random();
+
+        if (_prompts.Count == 0)
+        {
+            return "No more prompts :(";
+        }
+        
         int index = rand.Next(_prompts.Count);
-        return _prompts[index];
+        string prompt = _prompts[index];
+
+        _prompts.RemoveAt(index); //doesn't repeat the same prompts :)
+
+        return prompt;
     }
 
     public void RunActivity()
@@ -32,6 +42,7 @@ class ListingActivity : BaseActivity
         string prompt = GetRandomPrompt();
         Console.WriteLine();
         Console.WriteLine(prompt);
+        ShowCountDown(5, 1000);
 
         Console.WriteLine("Start listing");
         StartTimer();
@@ -44,8 +55,8 @@ class ListingActivity : BaseActivity
             list.Add(Console.ReadLine());
         }
         
-        Console.WriteLine("\nGood job!");
         Console.WriteLine("You listed " + list.Count + " items.");
+        Console.WriteLine("\nGood job!");
     }
 
 }
