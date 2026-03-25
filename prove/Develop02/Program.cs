@@ -294,7 +294,7 @@ public class Entry
         return 0;
     }
 
-    static int writing_state(List<string> x, string path)
+    static int Writing_state(List<string> x, string path)
     {
         
         Entry i = new Entry(); // create instance of entry
@@ -370,7 +370,7 @@ public class Entry
             }else if (state == 2) // write journal
             {
              
-                state = writing_state(_qtns,path);
+                state = Writing_state(_qtns,path);
 
 
             }else if (state ==3) // read records 
