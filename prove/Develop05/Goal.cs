@@ -1,4 +1,4 @@
-class Goal
+abstract class Goal
 {
     private string _name;
     private string _description;
@@ -20,6 +20,20 @@ class Goal
         _name = Console.ReadLine();
     }
 
+    public void SetDescription()
+    {
+        Console.Write("Description?: ");
+        _description = Console.ReadLine();
+    }
+
+    public void SetPoints()
+    {
+        Console.Write("How many points is it worth? ");
+        _points = int.Parse(Console.ReadLine());
+    }
+
+    public abstract void CreateGoal();
+    
     public virtual string GetConsoleString()
     {
         return $"Goal Information: {_name}";
