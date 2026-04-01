@@ -14,50 +14,35 @@ abstract class Goal
         _points = 0;
         _goalType = "";
     }
-    public void SetName()
+    public void SetName(string name)
     {
-        Console.Write("Set goal name: ");
-        _name = Console.ReadLine();
+        _name = name;
     }
 
-    public void SetDescription()
+    public void SetDescription(string description)
     {
-        Console.Write("Description?: ");
-        _description = Console.ReadLine();
+        _description = description;
     }
 
-    public void SetPoints()
+    public void SetPoints(int points)
     {
-        Console.Write("How many points is it worth? ");
-        _points = int.Parse(Console.ReadLine());
+        _points = points;
     }
 
+    public bool GetStatus()
+    {
+        return _status;
+    }
+
+    public void SetStatus(bool status)
+    {
+        _status = status;
+    }
     public abstract void CreateGoal();
-    
+
     public virtual string GetConsoleString()
     {
         return $"Goal Information: {_name}";
     }
-    // public string GetGoalName()
-    // {
-        
-    // }
-    // public int SetPoints()
-    // {
-        
-    // }
-    // public int GetPoints()
-    // {
-        
-    // }
-    // abstract public int GetCompletedPoints();
-    // abstract public void UpdateInfo();
-    // public void SaveGoalsToFile()
-    // {
-        
-    // }
-    // public void GetGoalsFromFile()
-    // {
-        
-    // }
+    
 }

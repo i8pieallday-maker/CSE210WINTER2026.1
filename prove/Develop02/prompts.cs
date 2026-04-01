@@ -5,7 +5,6 @@ class Prompts
      "hello!",
      "what have you done",
      "why is c# like this today"
-
     };
 
     public int ProcessPrompts()
