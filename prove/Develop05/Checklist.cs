@@ -4,11 +4,11 @@ class Checklist : Goal
     private int _maxGoals;
     private int _bonusPoints;
 
-    public Checklist(string goalType, int max, int bonus) : base(goalType)
+    public Checklist(string goalType) : base(goalType)
     {
         _numberOfCompletions = 0;
-        _maxGoals = max;
-        _bonusPoints = bonus;
+        _maxGoals = 0;
+        _bonusPoints = 0;
     }
 
     // public int CheckListGoal()
@@ -48,7 +48,7 @@ class Checklist : Goal
     }
     public override string GetConsoleString()
     {
-        return base.GetConsoleString();
+        return $"{base.GetConsoleString()}, Number completed: {_numberOfCompletions}, Max goals: {_maxGoals} ";
     }
     public override string GetFileSystemString()
     {

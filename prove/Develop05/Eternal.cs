@@ -2,7 +2,7 @@ class Eternal : Goal
 {
     private int _numberOfCompletions;
 
-    public Eternal(string goalType, int completions) : base(goalType)
+    public Eternal(string goalType) : base(goalType)
     {
         _numberOfCompletions = 0;
     }
@@ -19,7 +19,7 @@ class Eternal : Goal
     }
     public override string GetConsoleString()
     {
-        return base.GetConsoleString();
+        return $"{base.GetConsoleString()}, Number of Completions: {_numberOfCompletions}";
     }
     public override string GetFileSystemString()
     {

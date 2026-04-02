@@ -37,6 +37,18 @@ class Program
                         Console.WriteLine(mySimpleGoal.GetConsoleString());
                         break;
 
+                    case 2:
+                        Checklist myChecklist = new Checklist("Checklist");
+                        myChecklist.CreateGoal();
+                        Console.WriteLine(myChecklist.GetConsoleString());
+                        break;
+
+                    case 3:
+                        Eternal myEternal = new Eternal("Eternal");
+                        myEternal.CreateGoal();
+                        Console.WriteLine(myEternal.GetConsoleString());
+                        break;
+
                 }
                 break;
                 case 6:
