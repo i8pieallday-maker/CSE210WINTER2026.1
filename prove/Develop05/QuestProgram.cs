@@ -33,24 +33,37 @@ class Program
                 {
                     case 1:
                         Simple mySimpleGoal = new Simple("Simple");
-                        mySimpleGoal.CreateGoal();                        
-                        Console.WriteLine(mySimpleGoal.GetConsoleString());
+                        mySimpleGoal.CreateGoal();        
+                        goals.AddGoal(mySimpleGoal);                
+                        //Console.WriteLine(mySimpleGoal.GetConsoleString());
                         break;
 
                     case 2:
                         Checklist myChecklist = new Checklist("Checklist");
                         myChecklist.CreateGoal();
-                        Console.WriteLine(myChecklist.GetConsoleString());
+                        goals.AddGoal(myChecklist);                
+
+                        //Console.WriteLine(myChecklist.GetConsoleString());
                         break;
 
                     case 3:
                         Eternal myEternal = new Eternal("Eternal");
                         myEternal.CreateGoal();
-                        Console.WriteLine(myEternal.GetConsoleString());
+                        goals.AddGoal(myEternal);                
+                        //Console.WriteLine(myEternal.GetConsoleString());
                         break;
 
                 }
                 break;
+
+                case 2:
+                goals.DisplayGoals();
+                break;
+
+                case 3:
+                goals = 
+
+
                 case 6:
                 running = false;
                 break;

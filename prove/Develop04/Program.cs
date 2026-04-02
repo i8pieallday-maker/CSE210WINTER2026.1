@@ -9,7 +9,6 @@ class Program1
         Console.WriteLine("Welcome to Mindfulness!");
         Console.WriteLine("Menu Options: \n1. Breathing Activity \n2. Listing Activity \n3. Reflection Activity \n4. Quit");
 
-
         int choice = int.Parse(Console.ReadLine());
         
         while(choice != 4)

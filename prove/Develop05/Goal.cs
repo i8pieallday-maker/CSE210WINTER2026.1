@@ -50,7 +50,7 @@ abstract public class Goal
 
     public virtual string GetConsoleString()
     {
-        return $"Goal Information: {_name}, {_description}, {_points}";
+        return $"{_name}: {_description}, {_points}";
     }
 
     public virtual string GetFileSystemString()

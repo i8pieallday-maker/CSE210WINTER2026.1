@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 public class Goals
 {
@@ -22,13 +23,15 @@ public class Goals
     }
     public void SaveGoals()
     {
-        
+        ObtainFileName("Enter filename to save: ");
+       
     }
     public void DisplayGoals()
     {
+        int count = 0;
         foreach (Goal goal in _goals)
         {
-            Console.WriteLine(goal.GetConsoleString());
+            Console.WriteLine($"{++count}: {goal.GetConsoleString()}");
         }
     }
     public void DisplayScore()
