@@ -1,4 +1,4 @@
-abstract class Goal
+abstract public class Goal
 {
     private string _name;
     private string _description;
@@ -6,27 +6,35 @@ abstract class Goal
     private bool _status;
     private string _goalType;
 
-    public Goal()
+    public Goal(string goalType)
     {
         _name = "";
         _description = "";
         _status = false;
         _points = 0;
-        _goalType = "";
+        _goalType = goalType;
     }
-    public void SetName(string name)
+    public void SetName()
     {
-        _name = name;
-    }
-
-    public void SetDescription(string description)
-    {
-        _description = description;
+        Console.WriteLine("Please enter goal name: ");
+        _name = Console.ReadLine();
     }
 
-    public void SetPoints(int points)
+    public void SetDescription()
     {
-        _points = points;
+        Console.WriteLine("Please enter goal decription: ");
+        _description = Console.ReadLine();
+    }
+
+    public void SetPoints()
+    {
+        Console.WriteLine("Please enter points goal is worth: ");
+        _points = int.Parse(Console.ReadLine());
+    }
+
+    public int GetPoints()
+    {
+        return _points;
     }
 
     public bool GetStatus()
@@ -44,5 +52,11 @@ abstract class Goal
     {
         return $"Goal Information: {_name}";
     }
+
+    public virtual string GetFileSystemString()
+    {
+        return $"{_name}";
+    }
     
+    public abstract int RecordEvent();
 }

@@ -4,12 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Simple mySimpleGoal = new Simple();
+        Simple mySimpleGoal = new Simple("Simple");
         mySimpleGoal.CreateGoal();
         
         Console.WriteLine(mySimpleGoal.GetConsoleString());
-        Console.Write("Set goal name: ");
-        goal.SetName(Console.ReadLine());
+        //Console.Write("Set goal name: ");
+        //Goal.SetName(Console.ReadLine());
     }
 
 }

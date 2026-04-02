@@ -1,7 +1,7 @@
 class Simple : Goal
 {
 
-    public Simple(): base()
+    public Simple(string goalType): base(goalType)
     {
         
     }
@@ -11,5 +11,10 @@ class Simple : Goal
         base.SetName();
         base.SetDescription();
         base.SetPoints();
+    }
+
+    public override int RecordEvent()
+    {
+        return 0;
     }
 }

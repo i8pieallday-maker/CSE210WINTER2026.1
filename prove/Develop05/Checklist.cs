@@ -1,39 +1,68 @@
 class Checklist : Goal
 {
-    public int _numberOfCompletions;
-    public int _maxGoals;
-    public int _bonusPoints;
+    private int _numberOfCompletions;
+    private int _maxGoals;
+    private int _bonusPoints;
 
-    public CheckList(string name, string description, int points, int state, int max, int bonus) : base()
-    {    
-    }
-    public int CheckListGoal()
+    public Checklist(string goalType, int max, int bonus) : base(goalType)
     {
-        
+        _numberOfCompletions = 0;
+        _maxGoals = max;
+        _bonusPoints = bonus;
     }
+
+    // public int CheckListGoal()
+    // {
+        
+    // }
     public override void CreateGoal()
     {
-        
+        SetName();
+        SetDescription();
+        SetPoints();
+
+        ObtainMaxGoal();
+        ObtainBonusPoints();
+
+        _numberOfCompletions = 0;
     }
     public override int RecordEvent()
     {
-        
+        if (_numberOfCompletions < _maxGoals)
+        {
+            _numberOfCompletions++;
+
+            int pointsEarned = GetPoints();
+
+            if (_numberOfCompletions == _maxGoals)
+            {
+                Console.WriteLine("You did it! Bonus points awarded.");
+                pointsEarned += _bonusPoints;
+                SetStatus(true);
+            }
+
+            return pointsEarned;
+        }
+
+        return 0;
     }
     public override string GetConsoleString()
     {
-        
+        return base.GetConsoleString();
     }
     public override string GetFileSystemString()
     {
-        
+        return base.GetFileSystemString();
     }
     private void ObtainMaxGoal()
     {
-        
+        Console.WriteLine("How many times to do it?: ");
+        _maxGoals = int.Parse(Console.ReadLine());
     }
     private void ObtainBonusPoints()
     {
-        
+        Console.WriteLine("How many bonus points on completion?: ");
+        _bonusPoints = int.Parse(Console.ReadLine());
     }
 
 }
