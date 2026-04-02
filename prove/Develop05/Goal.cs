@@ -70,7 +70,7 @@ abstract public class Goal
     
     public virtual string GetFileSystemString()
     {
-        return $"{_goalType}#{_name}#{_description}#{_points}";
+        return $"{_goalType}#{_name}#{_description}#{_points}#{_status}";
     }
     
     public abstract int RecordEvent();

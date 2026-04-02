@@ -23,8 +23,18 @@ public class Goals
     }
     public void SaveGoals()
     {
-        ObtainFileName("Enter filename to save: ");
-       
+        //ObtainFileName("Enter filename to save: ");
+      
+        // check if file exists
+        string filepath = "goals.txt";
+        using (StreamWriter outputFile = new StreamWriter(filepath))
+        {
+            outputFile.WriteLine($"Score#{_totalScore}");
+            foreach(Goal goal in _goals)
+            {
+                outputFile.WriteLine($"{goal.GetFileSystemString()}");
+            }
+        }
     }
     public void DisplayGoals()
     {
