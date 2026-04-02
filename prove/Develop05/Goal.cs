@@ -6,6 +6,14 @@ abstract public class Goal
     private bool _status;
     private string _goalType;
 
+    public Goal(string name, string description, int points, bool status, string goalType)
+    {
+        _name = name;
+        _description = description;
+        _points = points;
+        _status = status;
+        _goalType = goalType;
+    }
     public Goal(string goalType)
     {
         _name = "";
@@ -50,9 +58,16 @@ abstract public class Goal
 
     public virtual string GetConsoleString()
     {
-        return $"{_name}: {_description}, {_points}";
+        if (_status)
+        { 
+            return $"[X] {_name}: {_description}, {_points}";
+        }
+        else
+        {
+            return $"[ ] {_name}: {_description}, {_points}";
+        }
     }
-
+    
     public virtual string GetFileSystemString()
     {
         return $"{_goalType}#{_name}#{_description}#{_points}";

@@ -1,6 +1,11 @@
 class Simple : Goal
 {
 
+    public Simple(string name, string description, int points, bool status, string goalType) : base(name, description, points, status, goalType)
+    {
+        
+    }
+
     public Simple(string goalType): base(goalType)
     {
         
@@ -15,6 +20,7 @@ class Simple : Goal
 
     public override int RecordEvent()
     {
-        return 0;
+        SetStatus(true);
+        return GetPoints();
     }
 }

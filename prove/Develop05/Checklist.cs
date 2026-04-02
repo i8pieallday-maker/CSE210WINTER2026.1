@@ -4,6 +4,14 @@ class Checklist : Goal
     private int _maxGoals;
     private int _bonusPoints;
 
+    public Checklist(string name, string description, int points, bool status, string goalType, int numberOfCompletions, int bonusPoints, int maxGoals) : base(name, description, points, status, goalType)
+    {
+        _numberOfCompletions = numberOfCompletions;
+        _maxGoals = maxGoals;
+        _bonusPoints = bonusPoints;
+
+    }
+
     public Checklist(string goalType) : base(goalType)
     {
         _numberOfCompletions = 0;

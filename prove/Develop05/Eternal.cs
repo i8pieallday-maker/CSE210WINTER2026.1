@@ -2,6 +2,10 @@ class Eternal : Goal
 {
     private int _numberOfCompletions;
 
+     public Eternal(string name, string description, int points, bool status, string goalType, int numberOfCompletions) : base(name, description, points, status, goalType)
+    {
+        _numberOfCompletions = numberOfCompletions;
+    }
     public Eternal(string goalType) : base(goalType)
     {
         _numberOfCompletions = 0;
@@ -15,7 +19,8 @@ class Eternal : Goal
     }
     public override int RecordEvent()
     {
-        return 0;
+        _numberOfCompletions++;
+        return GetPoints();
     }
     public override string GetConsoleString()
     {

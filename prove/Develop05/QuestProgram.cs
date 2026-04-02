@@ -9,6 +9,7 @@ class Program
 
         while (running)
         {
+            Console.WriteLine($"Score: {goals.GetDisplayScore()}");
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create Goal:");
             Console.WriteLine("2. Display Goals:");
@@ -42,7 +43,6 @@ class Program
                         Checklist myChecklist = new Checklist("Checklist");
                         myChecklist.CreateGoal();
                         goals.AddGoal(myChecklist);                
-
                         //Console.WriteLine(myChecklist.GetConsoleString());
                         break;
 
@@ -61,8 +61,16 @@ class Program
                 break;
 
                 case 3:
-                goals = 
+                goals.RecordEvent();
+                break;
 
+                case 4:
+                goals.SaveGoals();
+                break;
+
+                case 5:
+                goals.LoadGoals();
+                break;
 
                 case 6:
                 running = false;

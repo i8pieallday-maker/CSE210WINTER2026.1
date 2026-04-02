@@ -34,19 +34,17 @@ public class Goals
             Console.WriteLine($"{++count}: {goal.GetConsoleString()}");
         }
     }
-    public void DisplayScore()
+    public string GetDisplayScore()
     {
-        Console.WriteLine($"Total score: {_totalScore}");
+        return $"Total score: {_totalScore}";
     }
     public void RecordEvent()
     {
         DisplayGoals();
         Console.Write("Which goal did you complete?: ");
         int index = int.Parse(Console.ReadLine());
-        Goal goal = _goals[index];
-        goal.SetStatus(true);
-
-        _totalScore += goal.GetPoints();
+        Goal goal = _goals[index - 1];
+        _totalScore += goal.RecordEvent();
     }
     private void ObtainFileName(string prompt)
     {
