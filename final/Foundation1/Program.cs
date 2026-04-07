@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
-class YoutubeProgram
+class Program
 {
     public static void Main(string[] args)
     {
         Video video = new Video("How to do things", "a bee", 90);
+        Video video2 = new Video("How to fix ");
 
-
+//need to make a bunch more comments and stuff
         video.AddComment(new Comment("Tiffany","Incredible"));
         video.AddComment(new Comment("alexbees", "beeutiful"));
         video.AddComment(new Comment("creampuff", "WOAH"));
@@ -18,7 +19,7 @@ class YoutubeProgram
 
         foreach (Comment comment in video.GetComments())
         {
-            Console.WriteLine($"{comment.CommentName}: {comment.CommentText}");
+            Console.WriteLine($"{comment.GetName()}: {comment.GetComment()}");
         }
     }
 }

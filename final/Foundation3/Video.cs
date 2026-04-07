@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 
-class Video
+public class Video
 {
     Comment testComment;
     public string Title {get; set;}
