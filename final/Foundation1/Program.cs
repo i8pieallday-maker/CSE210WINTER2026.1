@@ -5,7 +5,7 @@ class Program
     public static void Main(string[] args)
     {
         Video video = new Video("How to do things", "a bee", 90);
-        Video video2 = new Video("How to fix ");
+        Video video2 = new Video("How to fix ", "hellooo", 10);
 
 //need to make a bunch more comments and stuff
         video.AddComment(new Comment("Tiffany","Incredible"));

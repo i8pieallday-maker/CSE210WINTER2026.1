@@ -1,23 +1,23 @@
-class Address()
+class Address
 {
     private string _street;
     private string _city;
     private string _state;
     private string _country;
 
-    public isInUSA(string country)
-    {
-        _country = country;
-        if (country = "USA")
-        {
-            return true;
-        }
-    }
-    public getFullAddress(string street, string city, string state, string country)
+    public Address(string street, string city, string state, string country)
     {
         _street = street;
         _city = city;
         _state = state;
-        Console.WriteLine($"Address: {street},{city},{state},{country}");
+        _country = country;
+    }
+    public bool IsInUSA()
+    {
+        return _country.ToLower() == "usa";
+    }
+    public string GetFullAddress()
+    {
+        return $"Address: {_street}\n{_city}, {_state},\n{_country}";
     }
 }

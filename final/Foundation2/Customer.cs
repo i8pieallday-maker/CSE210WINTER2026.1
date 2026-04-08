@@ -1,10 +1,21 @@
 class Customer
 {
     private string _name;
-    private int _address;
+    private Address _address;
 
-    public bool livesInUSA()
+    public Customer(string name, Address address)
     {
-        return _address.isInUSA();
+        _name = name;
+        _address = address;
+    }
+
+    public bool LivesInUSA()
+    {
+        return _address.IsInUSA();
+    }
+
+    public string ShippingInfo()
+    {
+        return $"Name: {_name}, Address: {_address.GetFullAddress()}";
     }
 }
