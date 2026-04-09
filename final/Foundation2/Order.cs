@@ -36,16 +36,19 @@ class Order
     {
         string returnString = "";
 
+        int x = 1;
+
         foreach (Product product in _products)
         {
-            returnString += $"Product info: {product.PackingInfo()}\n";
+            returnString += $"Product {x}: {product.PackingInfo()}\n";
+            x += 1;
         }
         return returnString;
     }
 
     public string GetShippingLabel()
     {
-        return "Shipping Label:" + _customer.ShippingInfo();
+        return _customer.ShippingInfo();
     }
 
 }

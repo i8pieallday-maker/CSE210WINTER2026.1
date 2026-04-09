@@ -22,5 +22,8 @@ class Program2
         Order order2 = new Order(customer2);
         order2.AddProduct(new Product("my eyes hurt", 00000, 42, 67));
         order2.AddProduct(new Product("Water or something", 20420, 96, 100));
+        Console.WriteLine(order2.GetShippingLabel());
+        Console.WriteLine(order2.GetLabel());
+        Console.WriteLine(order2.GetTotalCost());
     }   
 }
