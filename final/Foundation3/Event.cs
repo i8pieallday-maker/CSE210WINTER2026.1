@@ -19,13 +19,17 @@ class Event
         return $"{_title}: {_description} will be held on {_date} at {_time}.\n{_address.GetFullAddress()}.";
     }
 
-    // public virtual string FullDetails()
-    // {
-        
-    // }
+    public virtual string FullDetails()
+    {
+        return $"The {GetEventType()} {_title}: {_description} will be held on {_date} at {_time}.\n{_address.GetFullAddress()}. Relevant information: {Relevant()}";
+    }
     public virtual string GetEventType()
     {
         return "Event";
+    }
+    public virtual string Relevant()
+    {
+        return "Relevant";
     }
     public virtual string GetDescription()
     {
